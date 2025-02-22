@@ -22,7 +22,7 @@ This is a project I'll be working on to bring native async support to Django in 
 Since this is an experimental project, contributions, feedback, and discussions are welcome! Feel free to open issues or PRs.
 
 ## License
-TBD
+This project is licensed under the BSD 3-Clause License. See the [LICENSE](LICENSE) file for details.
 
 ## Why This Matters
 Django needs a true **async-first** framework, not just patches to existing sync-based components. **DRF standardized API development—DAF aims to do the same for async Django.**
