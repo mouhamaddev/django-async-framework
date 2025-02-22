@@ -7,6 +7,14 @@ Django is powerful, but its async support is incomplete. Some parts are async-fr
 
 This is a project I'll be working on to bring native async support to Django in a structured way.
 
+## Installation
+
+You can install `djangoasyncframework` via pip. Run the following command in your terminal:
+
+```bash
+pip install djangoasyncframework
+```
+
 ## Goals
 ✅ Provide a **non-blocking async ORM** for Django.
 
