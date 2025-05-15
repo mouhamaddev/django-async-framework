@@ -1,8 +1,0 @@
-Date: 16-5-2025
-
-Today I Learned:
-- Learned how to write a simple function-based middleware.
-
-Today I Did:
-- Built an async_error_middleware to catch and return JSON error responses from async views
-- Fixed a coroutine handling issue using Django’s @sync_and_async_middleware
