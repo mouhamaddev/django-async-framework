@@ -29,4 +29,5 @@ urlpatterns = [
 
     path('ping/', views.PingView.as_view(), name='ping'),
     path('db_view/', views.DBView.as_view(), name='db_view'),
+    path('run_in_background/', views.RunInBackgroundView.as_view(), name='run_in_background'),
 ]
