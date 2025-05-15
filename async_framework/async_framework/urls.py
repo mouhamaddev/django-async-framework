@@ -25,5 +25,7 @@ urlpatterns = [
     # Async views
     # Run using 'uvicorn async_framework.asgi:application --reload'
     path('async_hello/', views.async_hello_world, name='hello_world'),
-    path('delayed/', views.delayed_response)
+    path('delayed/', views.delayed_response),
+
+    path('ping/', views.PingView.as_view(), name='ping'),
 ]
