@@ -26,3 +26,9 @@ class PingView(AsyncView):
     async def get(self, request):
         await asyncio.sleep(1) # Simulate a delay
         return JsonResponse({"message": "pong", "status": "async"})
+
+
+class DBView(AsyncView):
+    async def get(self, request):
+        entity = await await_safe(lambda: Entity.objects.all().last())()
+        return JsonResponse({"entity_id": entity.id if entity else None})

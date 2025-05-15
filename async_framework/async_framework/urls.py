@@ -28,4 +28,5 @@ urlpatterns = [
     path('delayed/', views.delayed_response),
 
     path('ping/', views.PingView.as_view(), name='ping'),
+    path('db_view/', views.DBView.as_view(), name='db_view'),
 ]
