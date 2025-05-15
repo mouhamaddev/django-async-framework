@@ -1,0 +1,13 @@
+Date: 15-5-2025
+
+Today I Learned:
+- dispatch() is the method that routes the request to get(), post(), or whatever the method was.
+- If I want to handle something no matter what HTTP method is used then I should overrite dispatch().
+- View class (django.views) does two core thigs:
+    - as_view() Method: Converts a class into a callable view function to be used in urls.py.
+    - dispatch(): Routes request to the correct HTTP method.
+
+Today I Did:
+- I created my first class ever: AsyncView. It enables fully async class-based views by enforcing that all HTTP method handlers are async def and properly awaited during request dispatch.
+- Then I enabled asynchronous ORM usage. Previously, even if the API call was async, using Django’s synchronous ORM meant the total execution time would stack, for example, a 1-second API call followed by a 1-second ORM query would take 2 seconds overall. After implementing async-safe ORM access, both operations can now run concurrently, reducing the total time to just 1 second.
+- I implemented a run_in_background() utility that allows executing asynchronous tasks in the background without blocking the main response, enabling fire-and-forget operations like polling, syncing, or delayed jobs.
