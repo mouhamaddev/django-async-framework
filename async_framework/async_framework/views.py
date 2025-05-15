@@ -44,3 +44,8 @@ class RunInBackgroundView(AsyncView):
     async def get(self, request):
         run_in_background(self.some_async_job, request.user.id)
         return JsonResponse({"status": "Started in background"})
+    
+
+class CrashView(AsyncView):
+    async def get(self, request):
+        raise ValueError("booooom")
