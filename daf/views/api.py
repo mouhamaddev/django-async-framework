@@ -11,7 +11,7 @@ class AsyncAPIView(AsyncView):
     """
     A base class for creating asynchronous API views.
 
-    Example:
+    Example usage:
         class MyView(AsyncAPIView):
             async def post(self, request):
                 data = request.data

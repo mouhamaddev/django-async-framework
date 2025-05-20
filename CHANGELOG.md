@@ -14,3 +14,6 @@ Version: 1.0
 17-5-2025
 - Extended `AsyncAPIView` to automatically parse JSON request bodies into `request.data` before dispatching the view.
 - Added helper methods like `.success()` and `.error()` to streamline standard JSON API responses.
+
+20-5-2025
+- Designed the architecture for AsyncRateThrottle, an async-compatible rate limiter that protects endpoints by limiting requests per user/IP.

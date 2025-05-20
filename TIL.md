@@ -18,3 +18,9 @@ Date: 17-5-2025
 
 Today I Learned:
 - That feeling overwhelmed while building something like this is completely normal, in fact, it’s a sign that I’m working on something meaningful :D.
+
+
+Date: 20-5-2025
+
+Today I Learned:
+- Django’s built-in throttling (via DRF) is sync-based and tied to DRF.
