@@ -17,3 +17,6 @@ Version: 1.0
 
 20-5-2025
 - Designed the architecture for AsyncRateThrottle, an async-compatible rate limiter that protects endpoints by limiting requests per user/IP.
+
+21-5-2025
+- Integrated throttling logic directly into `AsyncAPIView`. Now rate limits will be enforced automatically during request dispatch.

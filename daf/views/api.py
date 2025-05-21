@@ -35,6 +35,16 @@ class AsyncAPIView(AsyncView):
         else:
             request.data = {}
 
+        # Throttle check
+        throttle_class = getattr(self, "throttle", None)
+        if throttle_class:
+            throttle = throttle_class
+            if isinstance(throttle_class, type):  # allow class or instance
+                throttle = throttle_class()
+            allowed = await throttle.allow_request(request)
+            if not allowed:
+                return self.error("Rate limit exceeded", status=429)
+
         return await super().dispatch(request, *args, **kwargs)
 
     def success(self, data=None, status=200):

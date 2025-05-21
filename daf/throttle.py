@@ -15,11 +15,13 @@ class AsyncRateThrottle:
                 if not await self.throttle.allow_request(request):
                     return self.error("Rate limit exceeded", status=429)
                 return self.success({"msg": "Allowed!"})
+
+        from daf.throttle import AsyncRateThrottle
     """
 
     def __init__(self, rate='10/minute'):
         self.num_requests, self.duration = self.parse_rate(rate)
-        self.history = {}
+        self.history = {} # {identifier: [timestamp1, timestamp2, ...]}
 
     def parse_rate(self, rate):
         num, unit = rate.split('/')

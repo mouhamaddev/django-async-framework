@@ -24,3 +24,9 @@ Date: 20-5-2025
 
 Today I Learned:
 - Django’s built-in throttling (via DRF) is sync-based and tied to DRF.
+
+
+Date: 21-5-2025
+
+Today I Learned:
+- That integrating throttling into AsyncAPIView requires hooking into the dispatch() method before the actual view handler is called to ensure rate limits being enforced before any expensive logic runs.
