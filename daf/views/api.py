@@ -4,7 +4,7 @@ import json
 
 from django.http import JsonResponse
 
-from daf.core import AsyncView
+from daf.views.core import AsyncView
 
 
 class AsyncAPIView(AsyncView):

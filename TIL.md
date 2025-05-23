@@ -30,3 +30,34 @@ Date: 21-5-2025
 
 Today I Learned:
 - That integrating throttling into AsyncAPIView requires hooking into the dispatch() method before the actual view handler is called to ensure rate limits being enforced before any expensive logic runs.
+
+
+Date: 23-5-2025
+
+Today I Learned:
+- Using requests.get(...) in Django views blocks the thread; better async alternatives exist.
+- WSGI vs ASGI:
+  - WSGI: Only supports synchronous code; one request per worker at a time.
+  - ASGI: Supports both sync and async which makes it ideal for WebSockets and long-lived connections.
+- Web Server Layers:
+  1. Web Server(Nginx/Apache): Handles SSL, load balancing.
+  2. Application Server(Gunicorn/Uvicorn): Runs Django workers.
+  3. Interface Layer(WSGI/ASGI): Protocol layer translating requests between server and Django.
+  4. App Layer(Django): Executes the actual application logic.
+- Gunicorn + WSGI: Multiple workers, each handling one request at a time.
+- Uvicorn + ASGI: Event loop handles many I/O-bound tasks concurrently.
+- Async Use Cases:
+  - Ideal for fast and concurrent I/O-bound tasks (e.g., multiple API calls).
+  - Useful when we want lower latency and minimal infrastructure overhead.
+  - Not a replacement for background tasks like Celery.
+- When to Use Celery + Redis:
+  - Long-running or compute-heavy tasks.
+  - Jobs needing retries, scheduling, or chaining.
+  - Tasks needing decoupled processing and independent scaling.
+- Django Channels:
+  - Good for WebSockets, long-lived bi-directional connections (e.g., chat apps).
+  - Not a replacement for async views as they serve different purposes.
+- ASGI/WSGI are interface standards (also used in Flask).
+- Async runs in a single thread using an event loop.
+- CPUs with multiple cores can truly do tasks in parallel, threads switch between tasks.
+- Async is concurrency, not true thread based parallelism.
