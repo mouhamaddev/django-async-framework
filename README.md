@@ -6,7 +6,7 @@ Welcome to the lightweight, fully asynchronous class-based view framework built 
 
 DAF is a minimalistic framework designed to bring true async support to Django’s class-based views. It enforces the use of `async def` HTTP method handlers, enabling developers to write modern, non-blocking web APIs and services using Django.
 
-## Uhh, Why DAF?
+## So.. Why DAF?
 
 Django is powerful, but its async support is incomplete. Some parts are async-friendly, while others are still blocking (`ORM`, `serializers`, `middleware`). Django Async Framework aims to solve this by providing a fully async-first development experience, similar to how Django REST Framework (DRF) standardized API development.
 
