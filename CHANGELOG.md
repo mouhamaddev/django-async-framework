@@ -20,3 +20,11 @@ Version: 1.0
 
 21-5-2025
 - Integrated throttling logic directly into `AsyncAPIView`. Now rate limits will be enforced automatically during request dispatch.
+
+26-05-2025
+- Initialized documentation.
+- Added main project intro, installation instructions, and quickstart guide.
+- Documented usage and design in the tutorial section for the current features.
+
+26-05-2025
+- Wrote tests for current features.
