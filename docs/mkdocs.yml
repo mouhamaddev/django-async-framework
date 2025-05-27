@@ -19,6 +19,7 @@ nav:
   - Tutorial:    
       - AsyncView: tutorial/asyncview.md
       - AsyncAPIView: tutorial/asyncapiview.md
+      - AsyncRateThrottle: tutorial/asyncratethrottle.md
       - await_safe: tutorial/await_safe.md
       - run_in_background: tutorial/run_in_background.md
       - async_error_middleware: tutorial/async_error_middleware.md
