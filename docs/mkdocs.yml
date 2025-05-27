@@ -18,4 +18,5 @@ nav:
   - Quick Start: quickstart.md
   - Tutorial:    
       - AsyncView: tutorial/asyncview.md
+      - await_safe: tutorial/await_safe.md
   - About: about.md
