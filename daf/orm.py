@@ -3,9 +3,9 @@ import functools
 from asgiref.sync import sync_to_async
 
 from typing import Callable, Coroutine, TypeVar, Any
-from asgiref.sync import sync_to_async
 
 _R = TypeVar("_R")
+
 
 def await_safe(callable_or_queryset_method: Callable[..., _R]) -> Callable[..., Coroutine[Any, Any, _R]]:
     """

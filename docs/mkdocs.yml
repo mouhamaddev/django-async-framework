@@ -19,4 +19,5 @@ nav:
   - Tutorial:    
       - AsyncView: tutorial/asyncview.md
       - await_safe: tutorial/await_safe.md
+      - run_in_background: tutorial/run_in_background.md
   - About: about.md
