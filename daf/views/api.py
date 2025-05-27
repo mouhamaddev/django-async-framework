@@ -9,18 +9,9 @@ from daf.views.core import AsyncView
 class AsyncAPIView(AsyncView):
     """
     A base class for creating asynchronous API views.
-
-    Example usage:
-        class MyView(AsyncAPIView):
-            async def post(self, request):
-                data = request.data
-                # Perform async operations here
-                return self.success({"echo": data})
     """
     
     async def dispatch(self, request, *args, **kwargs):
-        # This runs BEFORE Django calls the actual post(), put(), etc. and injects request.data
-
         if request.method in ("POST", "PUT", "PATCH"):
             try:
                 body = await request.body
