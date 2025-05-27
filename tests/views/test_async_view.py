@@ -6,7 +6,7 @@ from django.test import RequestFactory
 from django.http import JsonResponse
 from daf.views.core import AsyncView
 
-from tests.utils import django_config
+from tests import django_config
 django_config.configure()
 
 
@@ -43,19 +43,3 @@ async def test_sync_handler_raises_type_error():
         await view(request)
 
     assert "must be async" in str(excinfo.value)
-
-
-# TODO: Fix this test once we have a way to handle method not allowed in async views
-# @pytest.mark.asyncio
-# async def test_http_method_not_allowed():
-#     class MyView(AsyncView):
-#         async def get(self, request):
-#             return JsonResponse({"message": "get called"})
-
-#     factory = RequestFactory()
-#     request = factory.post('/')  # POST not defined, should call http_method_not_allowed
-
-#     view = MyView.as_view()
-
-#     response = await view(request)
-#     assert response.status_code == 405 # Method Not Allowed

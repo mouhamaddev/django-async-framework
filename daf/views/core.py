@@ -1,13 +1,16 @@
 from django.views import View
 import asyncio
 
+from django.http import HttpRequest, HttpResponse
+from typing import Any
+
 class AsyncView(View):
     """
     Enforces all HTTP method handlers
     to be defined as async functions.
     """
 
-    async def dispatch(self, request, *args, **kwargs):
+    async def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
         """
         Overrides the default dispatch method to support async method handling.
         Ensures that the method handler is an async def,
