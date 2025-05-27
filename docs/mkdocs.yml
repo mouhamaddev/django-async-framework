@@ -1,0 +1,21 @@
+site_name: Django Async Framework
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: blue
+    accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/language-python
+    favicon: material/language-python
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Tutorial:    
+      - AsyncView: tutorial/asyncview.md
+  - About: about.md
