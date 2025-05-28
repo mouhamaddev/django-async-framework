@@ -3,8 +3,8 @@
 ## Example Usage
 
 ```python
-from daf.throttle import AsyncRateThrottle
-from daf.views.api import AsyncAPIView
+from async_framework.throttle import AsyncRateThrottle
+from async_framework.views.api import AsyncAPIView
 
 class MyView(AsyncAPIView):
     throttle = AsyncRateThrottle(rate='5/second') # Time units supported: second, minute, and hour
@@ -26,4 +26,3 @@ class MyView(AsyncAPIView):
 
 Important Note: The throttle uses an in-memory dictionary to store request history, so it works best in single-process environments.
 For multi-process or distributed deployments, a shared cache or database-backed throttle would be necessary.
-* The default client identifier is the remote IP (`REMOTE_ADDR`), but this method can be overridden for custom identification.

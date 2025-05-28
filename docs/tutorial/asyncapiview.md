@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```python
-from daf.views.api import AsyncAPIView
+from async_framework.views.api import AsyncAPIView
 
 class MyView(AsyncAPIView):
     async def post(self, request):
