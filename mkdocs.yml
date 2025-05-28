@@ -4,14 +4,12 @@ theme:
   name: material
   palette:
     scheme: default
-    primary: blue
-    accent: light blue
+    primary: teal
   font:
     text: Roboto
     code: Roboto Mono
-  icon:
-    logo: material/language-python
-    favicon: material/language-python
+  logo: img/logo.png
+  favicon: img/logo.png
 
 nav:
   - Home: index.md

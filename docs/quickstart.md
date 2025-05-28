@@ -62,5 +62,4 @@ You should see:
 
 ## What’s Next?
 
-Now that you’ve built your first async API view, it’s time to go deeper.
 Want to explore more features? Check out the [tutorial](tutorial/asyncview.md).
