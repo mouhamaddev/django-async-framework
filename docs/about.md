@@ -2,7 +2,7 @@ Django Async Framework is an open-source Python package that brings first-class 
 
 ## License
 
-DAF is released under the **BSD 3-Clause License**, a permissive open-source license that allows you to freely use, modify, and distribute the software with minimal restrictions. See the [LICENSE](https://opensource.org/licenses/BSD-3-Clause) file for details.
+Django Async Framework is released under the **BSD 3-Clause License**, a permissive open-source license that allows you to freely use, modify, and distribute the software with minimal restrictions. See the [LICENSE](https://opensource.org/licenses/BSD-3-Clause) file for details.
 
 ## Contributing
 
