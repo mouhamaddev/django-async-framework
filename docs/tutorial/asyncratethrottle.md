@@ -6,7 +6,7 @@
 from async_framework.throttle import AsyncRateThrottle
 from async_framework.views.api import AsyncAPIView
 
-class MyView(AsyncAPIView):
+class AsyncRateThrottleView(AsyncAPIView):
     throttle = AsyncRateThrottle(rate='5/second') # Time units supported: second, minute, and hour
 
     async def get(self, request):
