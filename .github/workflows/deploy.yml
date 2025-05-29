@@ -1,4 +1,4 @@
-name: Deploy Docs to Server
+name: Deploy to VPS
 
 on:
   push:
@@ -22,6 +22,10 @@ jobs:
       uses: webfactory/ssh-agent@v0.8.0
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add server to known_hosts
+      run: |
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
     - name: Run deployment over SSH
       run: |
