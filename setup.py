@@ -4,7 +4,7 @@ setup(
     name="djangoasyncframework",
     version="0.1.0",
     packages=find_packages(),
-    description="Django Async Framework (DAF) provides an async-first approach to Django, enabling non-blocking ORM, views, serializers, and background tasks for improved performance.",
+    description="Django Async Framework provides an async-first approach to Django, enabling non-blocking ORM, views, serializers, and background tasks for improved performance.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="mouhamaddev",
