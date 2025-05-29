@@ -1,6 +1,5 @@
 # Welcome to Django Async Framework
 
-
 Welcome to the lightweight, fully asynchronous class-based view framework built on top of Django.
 
 <br>
