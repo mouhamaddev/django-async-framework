@@ -5,7 +5,7 @@
 ```python
 from async_framework.views.api import AsyncAPIView
 
-class MyView(AsyncAPIView):
+class MyAsyncAPIView(AsyncAPIView):
     async def post(self, request):
         data = request.data
         # Perform async operations here

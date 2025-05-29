@@ -20,7 +20,7 @@ INSTALLED_APPS = [
 Create a new Django view using `AsyncAPIView`:
 
 ```python
-from async_framework.views import AsyncAPIView
+from async_framework.views.api import AsyncAPIView
 
 class HelloWorldView(AsyncAPIView):
     async def get(self, request):
