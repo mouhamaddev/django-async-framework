@@ -16,7 +16,7 @@ class AsyncRateThrottle:
                     return self.error("Rate limit exceeded", status=429)
                 return self.success({"msg": "Allowed!"})
 
-        from daf.throttle import AsyncRateThrottle
+        from async_framework.throttle import AsyncRateThrottle
     """
 
     def __init__(self, rate='10/minute'):

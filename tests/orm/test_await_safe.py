@@ -2,7 +2,7 @@ import pytest
 import asyncio
 import time
 
-from daf.orm import await_safe
+from async_framework.orm import await_safe
 
 from tests import django_config
 django_config.configure()

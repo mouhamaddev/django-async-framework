@@ -1,6 +1,6 @@
 import pytest
 import time
-from daf.throttle import AsyncRateThrottle
+from async_framework.throttle import AsyncRateThrottle
 
 from tests import django_config
 django_config.configure()

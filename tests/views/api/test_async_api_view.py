@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from asgiref.testing import ApplicationCommunicator
 from django.core.handlers.asgi import ASGIRequest
 
-from daf.views.api import AsyncAPIView
+from async_framework.views.api import AsyncAPIView
 
 from tests import django_config
 django_config.configure()

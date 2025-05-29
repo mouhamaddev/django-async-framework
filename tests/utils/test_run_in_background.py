@@ -1,7 +1,7 @@
 import asyncio
 import pytest
 from unittest.mock import AsyncMock
-from daf.utils import run_in_background
+from async_framework.utils import run_in_background
 
 from tests import django_config
 django_config.configure()

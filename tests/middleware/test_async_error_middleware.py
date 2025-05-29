@@ -3,7 +3,7 @@ import json
 import pytest
 from django.http import HttpRequest
 from django.test import AsyncRequestFactory, RequestFactory
-from daf.middleware import async_error_middleware
+from async_framework.middleware import async_error_middleware
 
 from tests import django_config
 django_config.configure()

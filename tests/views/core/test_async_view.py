@@ -4,7 +4,7 @@ import json
 
 from django.test import RequestFactory
 from django.http import JsonResponse
-from daf.views.core import AsyncView
+from async_framework.views.core import AsyncView
 
 from tests import django_config
 django_config.configure()
