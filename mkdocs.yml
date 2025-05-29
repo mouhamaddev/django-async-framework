@@ -1,0 +1,24 @@
+site_name: Django Async Framework
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: teal
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: img/logo.png
+  favicon: img/logo.png
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Tutorial:    
+      - AsyncView: tutorial/asyncview.md
+      - AsyncAPIView: tutorial/asyncapiview.md
+      - AsyncRateThrottle: tutorial/asyncratethrottle.md
+      - await_safe: tutorial/await_safe.md
+      - run_in_background: tutorial/run_in_background.md
+      - async_error_middleware: tutorial/async_error_middleware.md
+  - About: about.md
