@@ -28,3 +28,9 @@ Version: 1.0
 
 26-05-2025
 - Wrote tests for current features.
+
+28-05-2025
+- Refined documentation for clarity and corrected minor errors.
+
+29-05-2025
+- Set up initial demo project to test and validate current feature implementations.
