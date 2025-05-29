@@ -5,7 +5,7 @@ In an async Django view, calling blocking code like `MyModel.objects.get(...)` d
 ## Example Usage
 
 ```python
-from async_framework.utils import await_safe
+from async_framework.orm import await_safe
 
 async def get_user(request):
     user = await await_safe(MyModel.objects.get)(id=5)
