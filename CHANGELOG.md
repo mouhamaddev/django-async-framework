@@ -34,3 +34,4 @@ Version: 1.0
 
 29-05-2025
 - Set up initial demo project to test and validate current feature implementations.
+- Create GitHub actions workflow to automate documentation deployment.
