@@ -17,14 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import MyAsyncView, MyAsyncAPIView
+from core.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # AsyncView
-    path("async_view/", MyAsyncView.as_view()),
+    path("async_view/", DemoAsyncView.as_view()),
 
-    # MyAsyncAPIView
-    path("async_api_view/", MyAsyncAPIView.as_view()),
+    # AsyncAPIView
+    path("async_api_view/", DemoAsyncAPIView.as_view()),
+    
+    # AsyncRateThrottle
+    path("async_rate_throttle_view/", AsyncRateThrottleView.as_view()),
+    
+    # await_safe
+    path("await_safe_view/", GetUserView.as_view()),
+    
+    # run_in_background
+    path("run_in_background_view/", SignUpUserView.as_view()),
 ]
