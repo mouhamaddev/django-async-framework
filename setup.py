@@ -1,11 +1,14 @@
 from setuptools import setup, find_packages
 
+with open("README.md", encoding="utf-8") as f:
+    long_description = f.read()
+
 setup(
     name="djangoasyncframework",
-    version="0.1.0",
+    version="0.2.0",
     packages=find_packages(),
     description="Django Async Framework provides an async-first approach to Django, enabling non-blocking ORM, views, serializers, and background tasks for improved performance.",
-    long_description=open("README.md").read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     author="mouhamaddev",
     author_email="mouhamaddev04@gmail.com",
