@@ -1,22 +1,35 @@
 import asyncio
-from django.http import JsonResponse
-from django.utils.decorators import sync_and_async_middleware
 import traceback
+from django.http import JsonResponse, HttpRequest, HttpResponse
+from django.utils.decorators import sync_and_async_middleware
+from typing import Callable, Union, Awaitable
+
 
 @sync_and_async_middleware
-def async_error_middleware(get_response):
+def async_error_middleware(
+    get_response: Union[Callable[[HttpRequest], HttpResponse], Callable[[HttpRequest], Awaitable[HttpResponse]]]
+) -> Callable[[HttpRequest], Union[HttpResponse, Awaitable[HttpResponse]]]:
     """
-    Catches errors in async views and returns detailed JSON responses.
-    This middleware should be added to the MIDDLEWARE setting in Django settings.
-    Example:
+    Middleware to catch unhandled exceptions in both sync and async views.
+    Returns detailed JSON error responses instead of Django's HTML debug page.
+
+    This should be added to Django's MIDDLEWARE setting:
         MIDDLEWARE = [
             ...
             'daf.middleware.async_error_middleware',
             ...
         ]
+
+    Args:
+        get_response: The next middleware or view to call.
+
+    Returns:
+        A middleware function that handles errors gracefully.
     """
+
+    # Async path
     if asyncio.iscoroutinefunction(get_response):
-        async def middleware(request):
+        async def middleware(request: HttpRequest) -> HttpResponse:
             try:
                 return await get_response(request)
             except Exception as e:
@@ -29,7 +42,8 @@ def async_error_middleware(get_response):
                 }, status=500)
         return middleware
 
-    def middleware(request):
+    # Sync path
+    def middleware(request: HttpRequest) -> HttpResponse:
         try:
             return get_response(request)
         except Exception as e:
