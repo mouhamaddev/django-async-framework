@@ -1,4 +1,4 @@
-Django Async Framework is an open-source Python package that brings first-class asynchronous support to Django’s class based views. It enables developers to write fully async HTTP handlers with simple, intuitive base classes and utilities designed for modern async programming in Django.
+Django Async Framework is an open-source Python package that brings first-class asynchronous support to Django’s class based views, enabling developers to write fully async HTTP handlers with simple base classes and utilities.
 
 ## License
 
