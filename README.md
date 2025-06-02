@@ -1,41 +1,35 @@
 # Welcome to Django Async Framework
 
-Welcome to the lightweight, fully asynchronous class-based view framework built on top of Django.
+A lightweight, fully asynchronous class-based view framework built on top of Django.
 
-<br>
+Django is a powerful web framework, but its async support is still a work in progress. Some parts play well with async, others don’t (ORM, serializers, middleware). Django Async Framework aims to fill in those gaps by giving a fully async-first way to build with Django.
 
-Django Async Framework is a lightweight library that adds true asynchronous support to Django’s class-based views, allowing developers to build non-blocking web APIs and services.
+### Getting Started
 
-## So.. Why Async Framework?
-
-Django is powerful, but its async support is incomplete. Some parts are async-friendly, while others are still blocking (ORM, serializers, middleware). Django Async Framework aims to solve this by providing a fully async-first development experience, similar to how Django REST Framework standardized API development.
-
-## Setup and Installation
-
-Getting started with Async Framework is quick and easy:
-
-1. Install the package via pip:
+1. Install it with pip:
 
 ```bash
 pip install djangoasyncframework
 ```
 
-2. **Add `async_framework` to your `INSTALLED_APPS`** in your Django project's `settings.py`:
+2. Add it to your `INSTALLED_APPS` in `settings.py`:
 
 ```python
 INSTALLED_APPS = [
-    # other apps ...
+    # your other apps...
     'async_framework',
 ]
 ```
 
-## Status
+### Why This Matters
 
-Django Async Framework is an early-stage open-source project currently under active development. It’s intended for developers who want to use Django’s async capabilities and support the ongoing development of a reliable and stable async framework.
+Django deserves a modern async-first ecosystem, not just patches around old sync components. Just like DRF set the standard for API development, Django Async Framework aims to do the same for asynchronous Django.
 
-## Why This Matters
-Django needs a true async-first framework, not just patches to existing sync-based components. DRF standardized API development, DAF aims to do the same for async Django.
 
-Your feedback, bug reports, and contributions are very welcome.
+### Project Status
+
+This is an early-stage open-source project that’s still growing. We’d love your feedback, ideas, bug reports, and contributions.
+
 <br>
-Stay tuned Djangonauts ❤️
+
+Stay tuned, Djangonauts ❤️
