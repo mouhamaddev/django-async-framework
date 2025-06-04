@@ -16,7 +16,7 @@ def async_error_middleware(
     This should be added to Django's MIDDLEWARE setting:
         MIDDLEWARE = [
             ...
-            'daf.middleware.async_error_middleware',
+            'async_framework.middleware.async_error_middleware',
             ...
         ]
 
