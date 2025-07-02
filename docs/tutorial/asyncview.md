@@ -1,5 +1,5 @@
 > `AsyncView` is the foundation of Async framework.
-> It currently performs one key job: it ensures that all your HTTP methods are async def. This protects the event loop and ensures you're writing non-blocking views.
+> It currently performs one main job: it ensures that all your HTTP methods are async def. This protects the event loop and ensures you're writing non-blocking views.
 >
 > Its implementation is minimal right now, but AsyncView will serve as the base class for all future async features in Async framework.
 
