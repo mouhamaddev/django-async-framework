@@ -35,3 +35,6 @@ Version: 1.0
 29-05-2025
 - Set up initial demo project to test and validate current feature implementations.
 - Create GitHub actions workflow to automate documentation deployment.
+
+02-07-2025:
+- Added async_setup() hook to AsyncView for async preloading and shared request initialization.
