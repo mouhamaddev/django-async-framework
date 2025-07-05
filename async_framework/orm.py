@@ -12,7 +12,7 @@ def await_safe(callable_or_queryset_method: Callable[..., _R]) -> Callable[..., 
     Wrap a blocking ORM call inside sync_to_async to safely run it
     in an asynchronous context without blocking the event loop.
 
-    Usage examples:
+    Usage:
         await await_safe(MyModel.objects.get)(id=5)
 
     Args:
