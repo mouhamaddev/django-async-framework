@@ -1,7 +1,6 @@
 import asyncio
 import pytest
-import traceback
-from async_framework.utils import async_task, AsyncTask
+from async_framework.tasks import async_task, AsyncTask
 
 from tests import django_config
 django_config.configure()
