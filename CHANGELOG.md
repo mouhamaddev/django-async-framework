@@ -36,5 +36,8 @@ Version: 1.0
 - Set up initial demo project to test and validate current feature implementations.
 - Create GitHub actions workflow to automate documentation deployment.
 
-02-07-2025:
+02-07-2025
 - Added async_setup() hook to AsyncView for async preloading and shared request initialization.
+
+06-07-2025
+- Added services dependency injection support to AsyncView. Developers can now define a services dictionary (or override services_attr) to register per-request service factories. These are resolved once per request and attached to the view instance.
