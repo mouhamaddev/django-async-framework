@@ -109,3 +109,68 @@ async def test_async_setup_default_noop():
 
     assert response.status_code == 200
     assert json.loads(response.content) == {"ok": True}
+
+
+@pytest.mark.asyncio
+async def test_services_are_resolved_and_accessible():
+    class MockService:
+        async def get_data(self):
+            return "mocked"
+
+    class MyView(AsyncView):
+        services = {
+            "my_service": lambda: MockService()
+        }
+
+        async def get(self, request):
+            result = await self.services["my_service"].get_data()
+            return JsonResponse({"result": result})
+
+    request = RequestFactory().get('/')
+    response = await MyView.as_view()(request)
+
+    assert response.status_code == 200
+    assert json.loads(response.content) == {"result": "mocked"}
+
+
+@pytest.mark.asyncio
+async def test_custom_services_attr_is_honored():
+    class CustomService:
+        async def hello(self):
+            return "world"
+
+    class MyView(AsyncView):
+        services_attr = "deps"
+        deps = {
+            "svc": lambda: CustomService()
+        }
+
+        async def get(self, request):
+            msg = await self.deps["svc"].hello()
+            return JsonResponse({"msg": msg})
+
+    request = RequestFactory().get('/')
+    response = await MyView.as_view()(request)
+
+    assert response.status_code == 200
+    assert json.loads(response.content) == {"msg": "world"}
+
+
+@pytest.mark.asyncio
+async def test_services_resolved_after_async_setup():
+    class MyView(AsyncView):
+        async def async_setup(self, request, *args, **kwargs):
+            self.services = {
+                "svc": lambda: type("DynamicService", (), {
+                    "get": lambda self: "configured"
+                })()
+            }
+
+        async def get(self, request):
+            return JsonResponse({"value": self.services["svc"].get()})
+
+    request = RequestFactory().get('/')
+    response = await MyView.as_view()(request)
+
+    assert response.status_code == 200
+    assert json.loads(response.content) == {"value": "configured"}
