@@ -41,3 +41,4 @@ Version: 1.0
 
 06-07-2025
 - Added services dependency injection support to AsyncView. Developers can now define a services dictionary (or override services_attr) to register per-request service factories. These are resolved once per request and attached to the view instance.
+- Added @async_task decorator and AsyncTask background worker to support fire-and-forget async tasks with optional retries and delay scheduling.

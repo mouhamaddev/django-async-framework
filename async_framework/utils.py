@@ -81,7 +81,7 @@ class AsyncTask:
     def __init__(self, func: Callable, retries: int = 0, delay: float = 0):
         self.func = func
         self.retries = retries
-        self.delay = delay
+        self._delay = delay
 
         functools.update_wrapper(self, func)
 
@@ -105,7 +105,8 @@ class AsyncTask:
         """ Start the background worker that processes queued tasks.
             This method should be called once to initialize the worker loop."""
         AsyncTask._worker_started = True
-        loop = asyncio.get_event_loop()
+        # loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         loop.create_task(AsyncTask._worker_loop())
 
     @staticmethod
@@ -115,8 +116,8 @@ class AsyncTask:
         while True:
             task, args, kwargs, attempt = await AsyncTask._queue.get()
             try:
-                if task.delay > 0:
-                    await asyncio.sleep(task.delay)
+                if task._delay > 0:
+                    await asyncio.sleep(task._delay)
 
                 await task.func(*args, **kwargs)
 
