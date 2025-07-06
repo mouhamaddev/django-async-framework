@@ -62,7 +62,7 @@ class AsyncView(View):
             raise TypeError(f"{handler.__name__} must be async")
 
         await self.async_setup(request, *args, **kwargs)
-        await self._resolve_services()
+        await _resolve_services(self)
 
         # Call the handler and await its result
         return await handler(request, *args, **kwargs)
