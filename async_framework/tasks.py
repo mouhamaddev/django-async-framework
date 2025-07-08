@@ -45,10 +45,11 @@ class AsyncTask:
     _queue = asyncio.Queue()
     _worker_started = False
 
-    def __init__(self, func: Callable, retries: int = 0, delay: float = 0):
+    def __init__(self, func: Callable, retries: int = 0, delay: float = 0, timeout: float = None):
         self.func = func
         self.retries = retries
         self._delay = delay
+        self.timeout = timeout
 
         functools.update_wrapper(self, func)
 
@@ -86,7 +87,10 @@ class AsyncTask:
                 if task._delay > 0:
                     await asyncio.sleep(task._delay)
 
-                await task.func(*args, **kwargs)
+                if task.timeout:
+                    await asyncio.wait_for(task.func(*args, **kwargs), timeout=task.timeout)
+                else:
+                    await task.func(*args, **kwargs)
 
             except Exception:
                 if attempt < task.retries:
@@ -103,12 +107,12 @@ class AsyncTask:
 
 # --- async_task decorator ---
 
-def async_task(retries: int = 0, delay: float = 0):
+def async_task(retries: int = 0, delay: float = 0, timeout: float = None):
     """
     Decorator to wrap an async function as an AsyncTask.
     """
     def decorator(func):
         if not asyncio.iscoroutinefunction(func):
             raise TypeError("@async_task can only decorate async functions")
-        return AsyncTask(func, retries=retries, delay=delay)
+        return AsyncTask(func, retries=retries, delay=delay, timeout=timeout)
     return decorator

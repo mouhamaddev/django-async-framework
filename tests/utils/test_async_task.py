@@ -68,3 +68,22 @@ def test_async_task_decorator_rejects_non_async():
         @async_task()
         def not_async():
             pass
+
+
+@pytest.mark.asyncio
+async def test_async_task_timeout(capsys):
+    call_attempts = []
+
+    @async_task(timeout=0.1, retries=1)
+    async def slow_task():
+        call_attempts.append(1)
+        await asyncio.sleep(0.5)  # sleep longer than the timeout
+
+    slow_task.delay()
+
+    await asyncio.sleep(1)  # enough time for retries to complete
+
+    captured = capsys.readouterr()
+    assert "Task failed, retrying attempt" in captured.out
+    assert "Task failed after retries" in captured.out
+    assert len(call_attempts) == 2  # original + 1 retry
