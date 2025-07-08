@@ -7,7 +7,7 @@ class AsyncRateThrottle:
     This throttle allows a certain number of requests per time unit.
     For example, '10/minute' allows 10 requests per minute.
     
-    Example usage:
+    Usage:
         class MyView(AsyncAPIView):
             throttle = AsyncRateThrottle(rate='5/second')
 

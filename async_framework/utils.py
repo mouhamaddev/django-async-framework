@@ -1,10 +1,11 @@
 import asyncio
-import functools
 
-from typing import Any, Awaitable, Callable, TypeVar, ParamSpec
+from typing import Awaitable, Callable, TypeVar
 
 _R = TypeVar("_R")
 
+
+# --- run_in_background ---
 
 def run_in_background(coro_func: Callable[..., Awaitable[_R]], *args, **kwargs) -> asyncio.Task[_R]:
     """
