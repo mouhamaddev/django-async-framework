@@ -40,6 +40,12 @@ class AsyncView(View):
 
     services_attr = "services"  # Default services attribute name, can be overridden in subclasses.
 
+    async def http_method_not_allowed(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        """
+        Async-compatible version of the default method-not-allowed handler.
+        """
+        return HttpResponse(f"Method {request.method} not allowed", status=405)
+
     async def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
         """
         Overrides the default dispatch method to support async method handling.
