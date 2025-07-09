@@ -14,7 +14,7 @@ build: test
 # Deploy to GitHub Pages
 deploy: build
 	@echo "Deploying to GitHub Pages..."
-	mkdocs gh-deploy --clean
+	mkdocs gh-deploy --clean --force
 
 # Do everything
 all: deploy
