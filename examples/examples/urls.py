@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from views.asyncview import MyAsyncView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # AsyncView
+    path("asyncView/", MyAsyncView.as_view()),
 ]
