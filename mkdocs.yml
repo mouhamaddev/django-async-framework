@@ -21,4 +21,5 @@ nav:
       - await_safe: tutorial/await_safe.md
       - run_in_background: tutorial/run_in_background.md
       - async_error_middleware: tutorial/async_error_middleware.md
+      - async_task: tutorial/async_task.md
   - About: about.md
