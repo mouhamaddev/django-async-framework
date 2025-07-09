@@ -21,6 +21,7 @@ import views.asyncapiview
 import views.asyncview
 import views.asyncratethrottle
 import views.await_safe
+import views.run_in_background
 
 urlpatterns = [
     # AsyncView
@@ -34,4 +35,7 @@ urlpatterns = [
 
     # await_safe
     path("awaitsafe/", views.await_safe.AwaitSafeView.as_view()),
+
+    # run_in_background
+    path("runinbackground/", views.run_in_background.RunInBackgroundView.as_view()),
 ]
