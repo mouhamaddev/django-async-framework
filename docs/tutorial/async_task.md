@@ -12,7 +12,7 @@ You could use this function when your application performs time-consuming async 
 
 ## Example Usage
 ```python
-from async_framework.utils import async_task
+from async_framework.tasks import async_task
 
 @async_task(retries=1, delay=1.5)
 async def heavy_operation(user_id):

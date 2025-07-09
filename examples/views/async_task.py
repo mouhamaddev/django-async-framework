@@ -1,7 +1,7 @@
 import asyncio
 from django.http import JsonResponse
 from async_framework.views.core import AsyncView
-from async_framework.utils import async_task
+from async_framework.tasks import async_task
 
 
 @async_task(retries=1, delay=1.5)
