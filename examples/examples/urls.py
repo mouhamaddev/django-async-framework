@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-import views
 import views.asyncapiview
 import views.asyncview
+import views.asyncratethrottle
 
 urlpatterns = [
     # AsyncView
@@ -27,4 +27,7 @@ urlpatterns = [
 
     # AsyncAPIView
     path("asyncapiview/", views.asyncapiview.MyAsyncAPIView.as_view()),
+
+    # AsyncRateThrottle
+    path("asyncratethrottle/", views.asyncratethrottle.ThrottledStatusView.as_view()),
 ]
