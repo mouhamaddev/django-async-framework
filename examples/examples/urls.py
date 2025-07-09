@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from views.asyncview import MyAsyncView
+import views
+import views.asyncapiview
+import views.asyncview
 
 urlpatterns = [
     # AsyncView
-    path("asyncView/", MyAsyncView.as_view()),
+    path("asyncview/", views.asyncview.MyAsyncView.as_view()),
+
+    # AsyncAPIView
+    path("asyncapiview/", views.asyncapiview.MyAsyncAPIView.as_view()),
 ]
