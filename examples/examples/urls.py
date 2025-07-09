@@ -20,6 +20,7 @@ from django.urls import path
 import views.asyncapiview
 import views.asyncview
 import views.asyncratethrottle
+import views.await_safe
 
 urlpatterns = [
     # AsyncView
@@ -30,4 +31,7 @@ urlpatterns = [
 
     # AsyncRateThrottle
     path("asyncratethrottle/", views.asyncratethrottle.ThrottledStatusView.as_view()),
+
+    # await_safe
+    path("awaitsafe/", views.await_safe.AwaitSafeView.as_view()),
 ]
