@@ -13,7 +13,7 @@ class MyAsyncAPIView(AsyncAPIView):
         if not subject or not message:
             return self.error("Subject and message are required.", status=400)
 
-        await asyncio.sleep(0.3)  # Simulate async I/O
+        await asyncio.sleep(0.3)  # simulate async I/O
 
         ticket_id = str(uuid.uuid4())
         return self.success({
