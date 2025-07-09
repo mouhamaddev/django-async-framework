@@ -22,6 +22,7 @@ import views.asyncview
 import views.asyncratethrottle
 import views.await_safe
 import views.run_in_background
+import views.async_error_view
 
 urlpatterns = [
     # AsyncView
@@ -38,4 +39,7 @@ urlpatterns = [
 
     # run_in_background
     path("runinbackground/", views.run_in_background.RunInBackgroundView.as_view()),
+
+    # async_error_middleware
+    path("asyncerror/", views.async_error_view.ErrorRaisingView.as_view()),
 ]
