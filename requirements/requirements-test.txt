@@ -1,0 +1,8 @@
+# Core
+Django==5.0.4
+asgiref==3.8.1
+
+# Testing tools
+pytest==8.2.2
+pytest-django==4.8.0
+pytest-asyncio==0.23.6
