@@ -5,9 +5,9 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="djangoasyncframework",
-    version="0.2.0",
+    version="0.3.1",
     packages=find_packages(),
-    description="Django Async Framework provides an async-first approach to Django, enabling non-blocking ORM, views, serializers, and background tasks for improved performance.",
+    description=" Providing async views, ORM, and tasks for Django. ",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="mouhamaddev",
@@ -16,7 +16,7 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Framework :: Django",
-        "License :: OSI Approved :: BSD 3-Clause License",
+        "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",

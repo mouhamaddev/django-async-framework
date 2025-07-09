@@ -1,4 +1,4 @@
-name: Test and Deploy Docs
+name: Test, Build Docs, and Deploy
 
 on:
   push:
@@ -22,6 +22,24 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements/requirements-dev.txt
+          pip install build twine mkdocs
 
-      - name: Run Makefile target
-        run: make deploy
+      - name: Run tests
+        run: pytest
+
+      - name: Build docs
+        run: mkdocs build
+
+      - name: Deploy docs to GitHub Pages
+        run: mkdocs gh-deploy --clean --force
+
+      - name: Build package for PyPI
+        run: |
+          rm -rf dist/ build/ *.egg-info
+          python -m build
+
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: twine upload dist/*
