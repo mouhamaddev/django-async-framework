@@ -1,12 +1,12 @@
 # DAF Development Log
 
-Version: 1.0
+Version: 0.1.0
 
 15-5-2025
 
-- Created my first class: AsyncView, enabling fully async class-based views by enforcing that all HTTP method handlers are async def and properly awaited.
-- Implemented async-safe ORM access using await_safe() to prevent blocking the event loop. Previously, a 1s async API call + 1s ORM query took 2s total — now both can run concurrently in ~1s.
-- Built run_in_background() utility for fire-and-forget async jobs (e.g., syncing, polling, etc.) without blocking the response.
+- Created the first class: AsyncView. It enforces that all HTTP method handlers are async def and properly awaited.
+- Implemented async-safe ORM access using await_safe() to prevent blocking the event loop. Previously, a 1s async API call + 1s ORM query took 2s total, now both can run concurrently in ~1s.
+- Built run_in_background() utility for fire-and-forget async jobs without blocking the response.
 
 16-5-2025
 
@@ -16,11 +16,11 @@ Version: 1.0
 17-5-2025
 
 - Extended AsyncAPIView to automatically parse JSON request bodies into request.data before dispatching the view.
-- Added helper methods like .success() and .error() to streamline standard JSON API responses.
+- Added helper methods: .success() and .error() to streamline standard JSON API responses.
 
 20-5-2025
 
-- Designed the architecture for AsyncRateThrottle, an async-compatible rate limiter that protects endpoints by limiting requests per user/IP.
+- Designed the architecture for the rate limiter AsyncRateThrottle that protects endpoints by limiting requests per user/IP.
 
 21-5-2025
 
@@ -34,16 +34,15 @@ Version: 1.0
 
 26-05-2025
 
-- Wrote tests for current features.
-
-28-05-2025
-
-- Refined documentation for clarity and corrected minor errors.
+- Wrote tests for previously added features.
 
 29-05-2025
 
 - Set up initial demo project to test and validate current feature implementations.
 - Create GitHub actions workflow to automate documentation deployment.
+
+
+Version: 0.2.0
 
 02-07-2025
 
