@@ -4,7 +4,6 @@ Django Async Framework is a lightweight class-based view framework built on top 
 
 Django is a powerful web framework, but its async support is still a work in progress. Some parts play well with async, others don’t. Django Async Framework aims to fill in those gaps by giving a fully async-first way to build with Django.
 
-You can find the documentation for the project at [https://mouhamaddev.github.io/django-async-framework/](https://mouhamaddev.github.io/django-async-framework/).
 
 ### Getting Started
 
