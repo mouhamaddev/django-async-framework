@@ -26,7 +26,7 @@ INSTALLED_APPS = [
 
 ### Why This Matters
 
-Django deserves a modern async-first ecosystem, not just patches around old sync components. Django deserves a modern async-first ecosystem, not just patches around old sync components. It provides a structured foundation for writing asynchronous code in Django without relying on sync-based workarounds.
+Django deserves a modern async-first ecosystem, not just patches around old sync components. It provides a structured foundation for writing asynchronous code in Django without relying on sync-based workarounds.
 
 
 ### Project Status
