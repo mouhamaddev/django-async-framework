@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="djangoasyncframework",
-    version="0.3.3",
+    version="0.3.4",
     packages=find_packages(),
     description=" Providing async views, ORM, and tasks for Django. ",
     long_description=long_description,
